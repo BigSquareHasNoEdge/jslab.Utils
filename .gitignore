@@ -477,3 +477,4 @@ $RECYCLE.BIN/
 *.lnk
 /Starter/sandbox.csproj
 .Starter/
+/Sandbox/Sandbox.csproj
