@@ -5,7 +5,11 @@ VisualStudioVersion = 17.6.33513.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DA82EACC-51A5-4322-A608-5E0AC9616AEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jslab.Util.PassFilter", "Jslab.Util.PassFilter\Jslab.Util.PassFilter.csproj", "{D4BA7BD4-0BC3-421B-8E77-B701257E62BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jslab.Util.PassFilter", "Jslab.Util.PassFilter\Jslab.Util.PassFilter.csproj", "{D4BA7BD4-0BC3-421B-8E77-B701257E62BD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sandbox", "sandbox", "{3EB32CD8-57AB-44B4-B6BE-FE3B0DAFB7A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "Sandbox\Sandbox.csproj", "{2C75EDA5-F40F-45C3-AA92-7E91AED04BA5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +21,17 @@ Global
 		{D4BA7BD4-0BC3-421B-8E77-B701257E62BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4BA7BD4-0BC3-421B-8E77-B701257E62BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4BA7BD4-0BC3-421B-8E77-B701257E62BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C75EDA5-F40F-45C3-AA92-7E91AED04BA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C75EDA5-F40F-45C3-AA92-7E91AED04BA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C75EDA5-F40F-45C3-AA92-7E91AED04BA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C75EDA5-F40F-45C3-AA92-7E91AED04BA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D4BA7BD4-0BC3-421B-8E77-B701257E62BD} = {DA82EACC-51A5-4322-A608-5E0AC9616AEC}
+		{2C75EDA5-F40F-45C3-AA92-7E91AED04BA5} = {3EB32CD8-57AB-44B4-B6BE-FE3B0DAFB7A8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3C5DCDD7-AC49-49F7-B23E-A5314AF03A68}

@@ -10,13 +10,13 @@ public class PassfilterPipeline<TContext>
     Predicate<TContext> _predicate = DummyTest;
     public Predicate<TContext> Predicate => _predicate;
 
-    public PassfilterPipeline<TContext> Add<TTester>() where TTester : Filter<TContext>
+    public PassfilterPipeline<TContext> Add<TTester>() where TTester : PassFilter<TContext>
     {
         _filters.Add(typeof(TTester));
         return this;
     }
 
-    public PassfilterPipeline<TContext> Remove<TTester>() where TTester : Filter<TContext>
+    public PassfilterPipeline<TContext> Remove<TTester>() where TTester : PassFilter<TContext>
     {
         var t = typeof(TTester);
         if(_filters.Contains(t))
@@ -37,7 +37,7 @@ public class PassfilterPipeline<TContext>
         {
             var nextTest = Build(filterIndex + 1);
 
-            var filter = (Filter<TContext>)Activator.CreateInstance(_filters[filterIndex])!;
+            var filter = (PassFilter<TContext>)Activator.CreateInstance(_filters[filterIndex])!;
 
             filter.SetNext(nextTest);
             filter.SetTokenSource(TokenSource);

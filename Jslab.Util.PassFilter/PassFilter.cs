@@ -1,13 +1,9 @@
-﻿using System;
-using System.Threading;
+﻿namespace Jslab.Util.PassFilter;
 
-namespace Jslab.Util.PassFilter;
-
-public abstract class Filter<TContext>
+public abstract class PassFilter<TContext>
 {
     protected Predicate<TContext>? NextTest;
-    protected CancellationTokenSource? TokenSource;       
-    
+    protected CancellationTokenSource? TokenSource;
 
     internal void SetNext(Predicate<TContext> nextTest)
         => NextTest = nextTest;
@@ -25,7 +21,7 @@ public abstract class Filter<TContext>
     protected abstract bool TestIfNotCancelled(TContext context);
 }
 
-public abstract class PreTester<TContext> : Filter<TContext>
+public abstract class PreTester<TContext> : PassFilter<TContext>
 {
     protected override bool TestIfNotCancelled(TContext context)
     {
@@ -38,7 +34,7 @@ public abstract class PreTester<TContext> : Filter<TContext>
     protected abstract bool PretestIfNotCancelled(TContext context);
 }
 
-public abstract class PostTester<TContext> : Filter<TContext>
+public abstract class PostTester<TContext> : PassFilter<TContext>
 {
     protected override bool TestIfNotCancelled(TContext context)
     {
