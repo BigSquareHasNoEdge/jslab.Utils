@@ -1,6 +1,6 @@
 ﻿namespace Jslab.Util.PassFilter.exams.PersonFilters;
 
-class NameContainsKim : PostTester<Person>
+class NameContainsKim : PostpathFilter<Person>
 {
     protected override bool PosttestIfNotCancelled(Person p)
     {

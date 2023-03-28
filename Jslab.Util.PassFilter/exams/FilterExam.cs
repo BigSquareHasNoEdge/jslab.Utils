@@ -3,7 +3,7 @@ using Jslab.Util.PassFilter.exams.PersonFilters;
 
 namespace Jslab.Util.PassFilter.tests;
 
-public class PassFilterExam
+public class FilterExam
 {
     public static List<Person> People { get; } = new List<Person>()
 {
@@ -13,10 +13,10 @@ public class PassFilterExam
     new Person("고길동", 16),
 };
 
-    public static PassfilterPipeline<Person> PipeLine { get; } = new PassfilterPipeline<Person>()
+    public static ConnectorOfFilter<Person> PipeLine { get; } = new ConnectorOfFilter<Person>()
             .Add<IsOver18>()
             .Add<NameContainsKim>()
-            .Build();
+            .Connect();
 
     public static void Run()
     {
@@ -24,9 +24,23 @@ public class PassFilterExam
         {
             Console.WriteLine($"Name: {p.Name}, Age: {p.Age}");
         }
-        Console.WriteLine("Removed");
+
+        var query = from p in People
+                    where PipeLine.Test(p)
+                    select p;
+
+        foreach (var p in query)
+        {
+            Console.WriteLine($"Name: {p.Name}, Age: {p.Age}");
+        }
+
+        foreach (var p in People.Where( e => PipeLine.Test(e)))
+        {
+            Console.WriteLine($"Name: {p.Name}, Age: {p.Age}");
+        }
 
         PipeLine.Remove<IsOver18>();
+        Console.WriteLine("Removed");
 
         foreach (var p in People.FindAll(PipeLine.Predicate))
         {

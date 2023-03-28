@@ -1,6 +1,6 @@
 ﻿namespace Jslab.Util.PassFilter.exams.PersonFilters;
 
-class IsOver18 : PreTester<Person>
+class IsOver18 : PrepathFilter<Person>
 {
     protected override bool PretestIfNotCancelled(Person p)
     {
