@@ -17,6 +17,7 @@ public class PassFilterExam
             .Add<IsOver18>()
             .Add<NameContainsKim>()
             .Build();
+
     public static void Run()
     {
         foreach (var p in People.FindAll(PipeLine.Predicate))

@@ -12,7 +12,7 @@ public class PipeLineTests
     {
         var stub = new Person( "ȫ�赿", 19);
 
-        var actual = PassFilterExam.PipeLine.Run(stub);
+        var actual = PassFilterExam.PipeLine.Test(stub);
 
         Assert.True(actual);
     }
